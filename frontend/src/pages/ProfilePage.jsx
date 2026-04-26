@@ -4,6 +4,8 @@ import { User, Calendar, LogOut, Clock, Target, CheckCircle, XCircle } from 'luc
 import { useAuth } from '../context/AuthContext';
 import { useNavigate, Navigate } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
 export default function ProfilePage() {
   const { user, logout, token } = useAuth();
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ export default function ProfilePage() {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/user/profile', {
+        const response = await fetch(`${API_URL}/user/profile`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (response.ok) {
