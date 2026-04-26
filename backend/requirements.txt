@@ -1,0 +1,11 @@
+flask
+flask-cors
+PyPDF2
+spacy
+nltk
+groq
+python-dotenv
+beautifulsoup4
+requests
+Flask-SQLAlchemy
+PyJWT
